@@ -410,7 +410,7 @@ export async function open (browser: Browser, url, options: any = {}) {
 
   const browserInstance = await utils.launch(browser, 'about:blank', launchOptions.args)
 
-  await firefoxUtil.setup({ extensions: launchOptions.extensions, url, foxdriverPort, marionettePort })
+  await firefoxUtil.setup({ browserInstance, extensions: launchOptions.extensions, url, foxdriverPort, marionettePort })
 
   return browserInstance
 }
